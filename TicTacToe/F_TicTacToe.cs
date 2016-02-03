@@ -52,7 +52,7 @@ namespace TicTacToe
             TableLayoutPanelCellPosition position = t.GetPositionFromControl(button);
             int colIndex = position.Column;
             int rowIndex = position.Row;
-            ticTacToe.play(rowIndex, colIndex);            
+            button.Text = ticTacToe.play(rowIndex, colIndex);            
         }
     }
 }

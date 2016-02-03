@@ -38,6 +38,7 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.title = new System.Windows.Forms.Label();
             this.tlp.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -156,11 +157,23 @@
             this.button1.Text = "button1";
             this.button1.UseVisualStyleBackColor = true;
             // 
+            // title
+            // 
+            this.title.AutoSize = true;
+            this.title.Font = new System.Drawing.Font("Microsoft YaHei UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.title.Location = new System.Drawing.Point(135, 23);
+            this.title.Name = "title";
+            this.title.Size = new System.Drawing.Size(251, 35);
+            this.title.TabIndex = 1;
+            this.title.Text = "Jeu du TicTacToe";
+            this.title.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // F_TicTacToe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(514, 407);
+            this.Controls.Add(this.title);
             this.Controls.Add(this.tlp);
             this.Name = "F_TicTacToe";
             this.Text = "TicTacToe";
@@ -182,6 +195,7 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label title;
     }
 }
 
