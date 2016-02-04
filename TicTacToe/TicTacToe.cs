@@ -12,7 +12,7 @@ namespace TicTacToe
 
         private int[,] grid;
 
-        int playerTurn = 1; // Joueur 1 en premier
+        int playerRound = 1; // Joueur 1 en premier
 
         public TicTacToe()
         {
@@ -21,8 +21,8 @@ namespace TicTacToe
 
         public String play(int row, int column)
         {
-            String symbol = playerTurn == 1 ? "X" : "O";
-            // playerTurn = (playerTurn + 1) % 2 + 1;
+            String symbol = playerRound == 1 ? "X" : "O";
+            playerRound += (playerRound == 1 ? 1 : -1);
             MessageBox.Show(row + " - " + column);
             return symbol;
         }
