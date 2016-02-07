@@ -54,6 +54,17 @@ namespace TicTacToe
             int rowIndex = position.Row;
             button.Text = ticTacToe.play(rowIndex, colIndex);
             button.Enabled = false;
+
+            
+            String s= ticTacToe.playIA();
+            Control control = tlp.GetControlFromPosition(ticTacToe.colIA, ticTacToe.rowIA);
+            if (control is Button)
+            {
+                Button b = (Button)control;
+                b.Text = s;
+                b.Enabled = false;
+            }
+            
         }
 
         public void resetButtons()
