@@ -55,5 +55,31 @@ namespace TicTacToe
             button.Text = ticTacToe.play(rowIndex, colIndex);
             button.Enabled = false;
         }
+
+        public void resetButtons()
+        {
+            int index = 0;
+            for (int col = 0; col < tlp.ColumnCount; col++)
+            {
+                for (int row = 0; row < tlp.RowCount; row++)
+                {
+                    Control control = tlp.GetControlFromPosition(col, row);
+                    if (control is Button)
+                    {
+                        Button button = (Button)control;
+                        button.Text = "";
+                        button.Enabled = true;
+                        buttons[index] = button;
+                        index++;
+                    }
+                }
+            }
+        }
+
+        private void restart_Click(object sender, EventArgs e)
+        {
+            ticTacToe.initGrid();
+            resetButtons();
+        }
     }
 }
