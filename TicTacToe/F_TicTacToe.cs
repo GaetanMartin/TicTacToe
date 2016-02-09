@@ -16,11 +16,13 @@ namespace TicTacToe
         Button[] buttons;
 
         TicTacToe ticTacToe;
+        Minimax minimax;
 
         public F_TicTacToe()
         {
             InitializeComponent();
-            ticTacToe = new TicTacToe();
+            //ticTacToe = new TicTacToe();
+            minimax = new Minimax();
             buttons = new Button[9];
             initButtons();
         }
@@ -52,12 +54,12 @@ namespace TicTacToe
             TableLayoutPanelCellPosition position = t.GetPositionFromControl(button);
             int colIndex = position.Column;
             int rowIndex = position.Row;
-            button.Text = ticTacToe.play(rowIndex, colIndex);
+            button.Text = minimax.play(rowIndex, colIndex);
             button.Enabled = false;
 
             
-            String s= ticTacToe.playIA();
-            Control control = tlp.GetControlFromPosition(ticTacToe.colIA, ticTacToe.rowIA);
+            String s= minimax.playIA();
+            Control control = tlp.GetControlFromPosition(minimax.colIA, minimax.rowIA);
             if (control is Button)
             {
                 Button b = (Button)control;
@@ -89,7 +91,7 @@ namespace TicTacToe
 
         private void restart_Click(object sender, EventArgs e)
         {
-            ticTacToe.initGrid();
+            minimax.initGrid();
             resetButtons();
         }
     }
